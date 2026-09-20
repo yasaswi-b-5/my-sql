@@ -1,12 +1,12 @@
-1. CREATE A TABLE named EMPLOYEE. The table contains 8 columns: EMPNO, ENAME, JOB, HIREDATE, MGR, SAL, COMM, DEPTNO. 
+#1. CREATE A TABLE named EMPLOYEE. The table contains 8 columns: EMPNO, ENAME, JOB, HIREDATE, MGR, SAL, COMM, DEPTNO. 
 create database EMPLOYEE;
 use employee;
 create table employee(EMPNO int primary key ,ENAME varchar(50),JOB VARCHAR(58),HIREDATE DATE,MGR INT,COMM INT,DEPTNO INT);
 ALTER TABLE EMPLOYEE ADD SAL INT(30);
 
-2. Add a PRIMARY KEY to the EMPNO column.
+#2. Add a PRIMARY KEY to the EMPNO column.
 
- 3. Insert the given employee data into the EMPLOYEE table.
+ #3. Insert the given employee data into the EMPLOYEE table.
  
 INSERT INTO EMPLOYEE
 (EMPNO, ENAME, JOB, HIREDATE, MGR, SAL, COMM, DEPTNO)
@@ -25,35 +25,48 @@ VALUES
 (7900, 'JAMES', 'CLERK', '1981-12-03', 7698, 950, NULL, 30),
 (7902, 'FORD', 'ANALYST', '1981-12-03', 7566, 3000, NULL, 20),
 (7934, 'MILLER', 'CLERK', '1982-01-23', 7782, 1300, NULL, 10);
- 4. Write a query to display all the employee details from the EMPLOYEE table.
+# 4. Write a query to display all the employee details from the EMPLOYEE table.
  SELECT * FROM EMPLOYEE;
  
- 5. Write a query to display all employee names and salary details from the EMPLOYEE table.
+ #5. Write a query to display all employee names and salary details from the EMPLOYEE table.
  SELECT ENAME,SAL FROM EMPLOYEE;
  
- 6. Write a query to display only employee names and HIREDATE from the EMPLOYEE table.
+ #6. Write a query to display only employee names and HIREDATE from the EMPLOYEE table.
  SELECT ENAME, HIREDATE from EMPLOYEE;
  
- 7. WAQTD names of all the employees.
+ #7. WAQTD names of all the employees.
  SELECT ENAME from  EMPLOYEE;
- 8. WAQTD name and salary given to all the employees.
- SELECT SAL FROM EMPLOYEE;
- 9. WAQTD name and commission given to all the employees. 
+
+ #8. WAQTD name and salary given to all the employees.
+ SELECT ename, SAL FROM EMPLOYEE;
+
+ #9. WAQTD name and commission given to all the employees. 
  select ENAME, COMM from employee;
- 10. WAQTD employee ID and department number of all the employees in EMP table. 
+
+ #10. WAQTD employee ID and department number of all the employees in EMP table. 
  select EMPNO,DEPTNO from employee;
- 11. WAQTD ENAME and HIREDATE of all the employees.
+
+ #11. WAQTD ENAME and HIREDATE of all the employees.
  select ENAME,HIREDATE FROM EMPLOYEE;
- 12. WAQTD name and designation of all the employees.
+
+ #12. WAQTD name and designation of all the employees.
  SELECT ENAME,JOB FROM EMPLOYEE;
- 13. WAQTD name, job and salary given to all the employees.
+
+ #13. WAQTD name, job and salary given to all the employees.
  SELECT ENAME,JOB,SAL FROM EMPLOYEE;
- 14. WAQTD department names present in the DEPARTMENT table.
+
+ #14. WAQTD department names present in the DEPARTMENT table.
+  select deptname from dept;
  
- 15. WAQTD DNAME and LOCATION present in the DEPT table.
+ #15. WAQTD DNAME and LOCATION present in the DEPT table.
+ select ename ,locfrom dept;
+  
+ #16. WAQTD name and annual salary of the employees.
+  select ename,sal*12 as annual_sal from employee;
  
- 16. WAQTD name and annual salary of the employees.
  
- 17. WAQTD all the details of the employee along with annual salary.
+ #17. WAQTD all the details of the employee along with annual salary.
+ select *,sal*12 as annual_sal from employee;
  
- 18. WAQTD name and salary of an employee with a deduction of 10%.
+ #18. WAQTD name and salary of an employee with a deduction of 10%.
+   select ename,sal-(sal*10/100) as sal_after_deduction from employee;
